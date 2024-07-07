@@ -10,20 +10,19 @@ function fibs(n) {
 }
 
 // Recursive
-function fibRec(n) {
-  let result = [0, 1, 1]
+function fibsRec(n) {
+  let memo = { 0: 0, 1: 1 }
+  let result = [0, 1]
   if (n <= 0) return []
   if (n === 1) return [0]
 
   function fib(n) {
     if (n < 2) return n
-    const temp = fib(n - 1) + fib(n - 2)
-    if (!result.includes(temp)) {
-      result.push(temp)
-    }
-    return temp
+    if (n in memo) return memo[n]
+    memo[n] = fib(n - 1) + fib(n - 2)
+    result.push(memo[n])
+    return memo[n]
   }
-  fib(n)
-  result.pop()
+  fib(n - 1)
   return result
 }
