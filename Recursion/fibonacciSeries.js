@@ -11,18 +11,11 @@ function fibs(n) {
 
 // Recursive
 function fibsRec(n) {
-  let memo = { 0: 0, 1: 1 }
-  let result = [0, 1]
   if (n <= 0) return []
   if (n === 1) return [0]
+  if (n === 2) return [0, 1]
 
-  function fib(n) {
-    if (n < 2) return n
-    if (n in memo) return memo[n]
-    memo[n] = fib(n - 1) + fib(n - 2)
-    result.push(memo[n])
-    return memo[n]
-  }
-  fib(n - 1)
-  return result
+  let array = fibsRec(n - 1)
+  array.push(array[array.length - 1] + array[array.length - 2])
+  return array
 }
