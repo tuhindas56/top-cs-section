@@ -37,9 +37,12 @@ class LinkedList {
   }
 
   insertAt(value, index) {
+    if (index < 0 || index > this._length) {
+      throw new Error("Index out of bounds")
+    }
     if (index === 0) {
       this.prepend(value)
-    } else if (index === this._length - 1) {
+    } else if (index === this._length) {
       this.append(value)
     } else {
       let node = this._head
@@ -55,12 +58,17 @@ class LinkedList {
       const newNode = new Node(value)
       newNode.nextNode = node
       previousNode.nextNode = newNode
+      this._length += 1
     }
   }
 
   removeAt(index) {
+    if (index < 0 || index > this._length) {
+      throw new Error("Index out of bounds")
+    }
     if (index === 0) {
       this._head = this._head.nextNode
+      this._length -= 1
     } else if (index === this._length - 1) {
       this.pop()
     } else {
@@ -75,6 +83,7 @@ class LinkedList {
         }
       }
       previousNode.nextNode = node.nextNode
+      this._length -= 1
     }
   }
 
@@ -104,6 +113,14 @@ class LinkedList {
 
   pop() {
     let currentNode = this._head
+    if (!this._length) return null
+    if (this._length === 1) {
+      const temp = this._head.value
+      this._head = null
+      this._tail = null
+      this._length -= 1
+      return temp
+    }
     let previousNode = null
     while (currentNode.nextNode) {
       previousNode = currentNode
@@ -111,15 +128,14 @@ class LinkedList {
     }
     previousNode.nextNode = null
     this._tail = previousNode
+    this._length -= 1
     return currentNode.value
   }
 
   contains(value) {
     let currentNode = this._head
     while (currentNode) {
-      if (currentNode.value === value) {
-        return true
-      }
+      if (currentNode.value === value) return true
       currentNode = currentNode.nextNode
     }
     return false
@@ -141,7 +157,7 @@ class LinkedList {
   toString() {
     let currentNode = this._head
     let list = []
-    while (currentNode) {
+    while (this._length && currentNode) {
       list.push(`(${currentNode.value})`)
       currentNode = currentNode.nextNode
     }
