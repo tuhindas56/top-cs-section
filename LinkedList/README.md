@@ -43,29 +43,3 @@ A simple implementation of a singly linked list with basic methods for list mani
 
 - `toString()`
   Returns a string representation of the list.
-
-## Example Usage
-
-```javascript
-const list = new LinkedList()
-
-list.append(1)
-list.append(2)
-list.prepend(0)
-console.log(list.toString()) // Output: (0) -> (1) -> (2) -> (null)
-
-console.log(list.size()) // Output: 3
-console.log(list.head().value) // Output: 0
-console.log(list.tail().value) // Output: 2
-
-list.insertAt(1.5, 2)
-console.log(list.toString()) // Output: (0) -> (1) -> (1.5) -> (2) -> (null)
-
-list.removeAt(1)
-console.log(list.toString()) // Output: (0) -> (1.5) -> (2) -> (null)
-
-console.log(list.find(1.5)) // Output: 1
-console.log(list.contains(2)) // Output: true
-console.log(list.pop()) // Output: 2
-console.log(list.toString()) // Output: (0) -> (1.5) -> (null)
-```
