@@ -82,7 +82,7 @@ const knightMoves = ([fromX, fromY], [destinationX, destinationY]) => {
       if (!visited.has(`${move.x}, ${move.y}`)) queue.push(move)
     }
 
-    // Feed the destination co-ordinated and updated queue into the helper
+    // Feed the destination co-ordinates and updated queue into the helper
     return helper(destinationX, destinationY, queue)
   }
 
