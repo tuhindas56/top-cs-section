@@ -2,6 +2,7 @@
 
 Knights Travails project, implemented as part of <a href="https://www.theodinproject.com/lessons/javascript-knights-travails">The Odin Project curriculum</a>.
 
+## Description
 This project provides a solution to find the shortest path a knight on a chessboard needs to take to move from a starting position to a destination position using Breadth-First Search (BFS) algorithm.
 
 ## Usage
