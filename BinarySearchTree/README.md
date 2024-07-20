@@ -35,7 +35,7 @@ The `Tree` class represents a binary search tree (BST). It provides methods to i
 - `depth(node)`
   Calculates the depth of the specified node from the root.
 
-- `isBalanced(node = this.root)`
+- `isBalanced()`
   Checks if the tree or subtree rooted at the specified node is balanced.
 
 - `reBalance()`
