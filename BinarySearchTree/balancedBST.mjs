@@ -223,11 +223,10 @@ export default class Tree {
     if (!node) return true
     const leftHeight = this.height(node.left)
     const rightHeight = this.height(node.right)
-
     if (Math.abs(leftHeight - rightHeight) > 1) {
       return false
     } else {
-      return this.isBalanced(node.left) || this.isBalanced(node.right)
+      return this.isBalanced(node.left) && this.isBalanced(node.right)
     }
   }
 
