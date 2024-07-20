@@ -72,7 +72,6 @@ const knightMoves = ([fromX, fromY], [destinationX, destinationY]) => {
 
     // Check if current co-ordinate is the destination co-ordinate
     if (move.x === destinationX && move.y === destinationY)
-      // return console.log("Reached!\n" + "x: " + currentX + "\ny: " + currentY)
       return move
 
     // Get available co-ordinates from current position
