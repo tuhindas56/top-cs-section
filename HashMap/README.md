@@ -34,22 +34,3 @@ The `HashMap` class provides a basic key-value store with essential methods and 
 
 - `entries()`
   Returns an array of key-value pairs as arrays.
-
-## Example Usage
-
-```javascript
-import HashMap from "./hashMap.mjs"
-
-const map = new HashMap()
-
-map.set("name", "Alice")
-console.log(map.get("name")) // Output: Alice
-
-console.log(map.has("name")) // Output: true
-
-map.remove("name")
-console.log(map.has("name")) // Output: false
-
-map.set("age", 30)
-console.log(map.length()) // Output: 1
-```
