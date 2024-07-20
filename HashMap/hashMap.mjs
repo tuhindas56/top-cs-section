@@ -121,3 +121,16 @@ class HashMap {
     return entries
   }
 }
+
+const map = new HashMap()
+
+map.set("name", "Alice")
+console.log(map.get("name")) // Output: Alice
+
+console.log(map.has("name")) // Output: true
+
+map.remove("name")
+console.log(map.has("name")) // Output: false
+
+map.set("age", 30)
+console.log(map.length())
